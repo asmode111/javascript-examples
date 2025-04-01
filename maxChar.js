@@ -12,11 +12,11 @@ const maxChar = (str) => {
   console.log(obj);
   const maxObj = Object.entries(obj).reduce((result, val) => {
     if (val[1] > result.maxNumber) {
-      return {maxNumber: val[1], maxChar: val[0]};
+      return {maxChar: val[0], maxNumber: val[1]};
     }
 
     return result;
-  }, {maxNumber: 0, maxChar: ''})
+  }, {maxChar: '', maxNumber: 0})
 
   return maxObj;
 }
