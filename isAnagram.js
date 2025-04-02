@@ -7,22 +7,10 @@ const isAnagram  = (str1, str2) => {
     return false;
   }
 
+  const sorted1 = str1.split("").sort().join("");
+  const sorted2 = str2.split("").sort().join("");
 
-  for (let i = 0; i < str1.length; i++) {
-    let hasLetter = false;
-    for (let j = 0; j < str1.length; j++) {
-      if (str1[i] == str2[j]) {
-        hasLetter = true
-        break;
-      }
-    }
-
-    if (!hasLetter) {
-      return false;
-    }
-  }
-
-  return true;
+  return sorted1 === sorted2;
 }
 
 console.log(isAnagram("listen", "listen"));
@@ -31,3 +19,4 @@ console.log(isAnagram("hello", "oehll"));
 console.log(isAnagram("listen", "salent"));
 console.log(isAnagram("listen", "silentt"));
 console.log(isAnagram("listen", "silen"));
+console.log(isAnagram("aab", "abc"));
