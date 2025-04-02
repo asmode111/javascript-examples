@@ -1,12 +1,22 @@
 const isUniqueString = (str) => {
-  let stack = [];
+  const seen = {};
   for (const char of str) {
-    if (!stack[char]) {
-      stack[char] = true;
-      continue;
+    if (seen[char]) {
+      return false;
     }
 
-    return false;
+    seen[char] = true;
+  }
+
+  return true;
+}
+
+const isUniqueStringWithoutDataStructure = (str) => {
+  const arr = str.split("").sort();
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] == arr[i+1]) {
+      return false;
+    }
   }
 
   return true;
@@ -15,3 +25,7 @@ const isUniqueString = (str) => {
 console.log(isUniqueString("abcd"));
 console.log(isUniqueString("aabcd"));
 console.log(isUniqueString("abcdd"));
+
+console.log(isUniqueStringWithoutDataStructure("abcd"));
+console.log(isUniqueStringWithoutDataStructure("aabcd"));
+console.log(isUniqueStringWithoutDataStructure("abcdd"));
