@@ -1,6 +1,5 @@
 const charCount = (str) => {
   let obj = {};
-
   for (const char of str) {
     if (!obj[char]) {
       obj[char] = 1;
@@ -12,17 +11,18 @@ const charCount = (str) => {
   return obj;
 }
 
+const isOdd = (length) => {
+  return length % 2 == 1;
+}
+
 const isPalindromePermutation = (str) => {
   str = str.trim().replace(/ +/g, "");
-
   const charCountObj = charCount(str);
-  const mod = str.length % 2;
-  if (mod == 1) {
+  if (isOdd(str.length)) {
     let numberOfOdds = 0;
     for (const charCount of Object.entries(charCountObj)) {
-      if (charCount[1] % 2 == 1) {
+      if (isOdd(charCount[1])) {
         numberOfOdds++;
-
         if (numberOfOdds > 1) {
           return false;
         }
@@ -33,7 +33,7 @@ const isPalindromePermutation = (str) => {
   }
 
   for (const charCount of Object.entries(charCountObj)) {
-    if (charCount[1] % 2 == 1) {
+    if (isOdd(charCount[1])) {
       return false;
     }
   }
