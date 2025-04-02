@@ -25,6 +25,7 @@ const isAnagram  = (str1, str2) => {
   return true;
 }
 
+console.log(isAnagram("listen", "listen"));
 console.log(isAnagram("listen", "silent"));
 console.log(isAnagram("hello", "oehll"));
 console.log(isAnagram("listen", "salent"));

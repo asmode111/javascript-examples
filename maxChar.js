@@ -3,7 +3,7 @@ const maxChar = (str) => {
 
   for (let char of str) {
     if (obj[char]) {
-      obj[char] = ++obj[char];
+      obj[char]++;
     } else {
       obj[char] = 1;
     }
