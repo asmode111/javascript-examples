@@ -16,7 +16,7 @@ const isOdd = (length) => {
 }
 
 const isPalindromePermutation = (str) => {
-  str = str.trim().replace(/ +/g, "");
+  str = str.toLowerCase().replace(/[^a-z]/g, "");
   const charCountObj = charCount(str);
   if (isOdd(str.length)) {
     let numberOfOdds = 0;

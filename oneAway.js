@@ -1,50 +1,45 @@
-const charCount = (str) => {
-  let obj = {};
-  for (let char of str) {
-    if (!obj[char]) {
-      obj[char] = 1;
-    } else {
-      obj[char]++;
-    }
-  }
-
-  return obj;
-}
-
 const isOneAway = (str1, str2) => {
   str1 = str1.trim();
   str2 = str2.trim();
-  if (str1 == str2) {
+
+  if (str1 === str2) {
     return false;
   }
 
-  const lengthDiff = Math.abs(str1.length - str2.length);
+  const str1Length = str1.length;
+  const str2Length = str2.length;
+
+  const lengthDiff = Math.abs(str1Length - str2Length);
   if (lengthDiff > 1) {
     return false;
   }
 
-  const str1CharCountObj = charCount(str1);
-  const str2CharCountObj = charCount(str2);
+  const str1Arr = str1.split("");
+  const str2Arr = str2.split("");
 
   let diffCount = 0;
-  for (let i in str1CharCountObj) {
-    if (str1CharCountObj[i] !== str2CharCountObj[i]) {
-      diffCount++;
-    }
-
-    if (diffCount > 1) {
-      return false;
+  if (str1Length === str2Length) {
+    for (let i = 0; i < str1Length; i++) {
+      if (str1Arr[i] !== str2Arr[i]) {
+        diffCount++;
+        if (diffCount > 1) {
+          return false;
+        }
+      }
     }
   }
+
+  // TODO: Handle Length diff = 1 case
 
   return true;
 }
 
 
-console.log(isOneAway("pale", "ple"));
-console.log(isOneAway("pales", "pale"));
-console.log(isOneAway("pale", "kale"));
-console.log(isOneAway("pale", "pales"));
-console.log(isOneAway("pale", "bake"));
-console.log(isOneAway("ale", "ake"));
-console.log(isOneAway("ale", "akk"));
+console.log(isOneAway("pale", "kale")); // true
+console.log(isOneAway("pale", "cake")); // false
+console.log(isOneAway("pale", "ple")); // true
+console.log(isOneAway("pales", "pale")); // true
+console.log(isOneAway("pale", "pales")); // true
+console.log(isOneAway("pale", "bake")); // false
+console.log(isOneAway("ale", "ake")); // true 
+console.log(isOneAway("ale", "akk")); // false
