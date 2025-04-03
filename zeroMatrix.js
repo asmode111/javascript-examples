@@ -1,12 +1,12 @@
 const zeroMatrix = (matrix) => {
 
-  const rowsSize = matrix.length;
-  const colsSize = matrix[0].length;
+  const rowSize = matrix.length;
+  const colSize = matrix[0].length;
   const zeroRows = new Set();
   const zeroCols = new Set();
 
-  for (let i = 0; i < rowsSize; i++) {
-    for (let j = 0; j < colsSize; j++) {
+  for (let i = 0; i < rowSize; i++) {
+    for (let j = 0; j < colSize; j++) {
       if (matrix[i][j] === 0) {
         zeroRows.add(i);
         zeroCols.add(j);
@@ -14,17 +14,14 @@ const zeroMatrix = (matrix) => {
     }
   }
 
-  console.log('zeroRows', zeroRows)
-  console.log('zeroCols', zeroCols)
-
   for (const row of zeroRows) {
-    for (let i = 0; i < colsSize; i++) {
-      matrix[row][i] = 0;
+    for (let j = 0; j < colSize; j++) {
+      matrix[row][j] = 0;
     }
   }
 
   for (const col of zeroCols) {
-    for (let i = 0; i < rowsSize; i++) {
+    for (let i = 0; i < rowSize; i++) {
       matrix[i][col] = 0;
     }
   }
