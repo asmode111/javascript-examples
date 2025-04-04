@@ -1,0 +1,29 @@
+@font-face{font-display:fallback;font-family:FuturaPT;font-style:normal;font-weight:600;src:url(https://d6ce0no7ktiq.cloudfront.net/fonts/Futura/FuturaPTHeavy.eot);src:url(https://d6ce0no7ktiq.cloudfront.net/fonts/Futura/FuturaPTHeavy.eot#iefix) format("embedded-opentype"),url(https://d6ce0no7ktiq.cloudfront.net/fonts/Futura/FuturaPTHeavy.woff2) format("woff2"),url(https://d6ce0no7ktiq.cloudfront.net/fonts/Futura/FuturaPTHeavy.woff) format("woff"),url(https://d6ce0no7ktiq.cloudfront.net/fonts/Futura/FuturaPTHeavy.ttf) format("truetype"),url(https://d6ce0no7ktiq.cloudfront.net/fonts/Futura/FuturaPTHeavy.otf) format("opentype")}
+
+.container
+{
+  max-width: 700px;
+}
+
+.btn-group .btn
+{
+      font-family: FuturaPT,sans-serif;
+//    font-size: 12px;
+    line-height: 1.3333333;
+    padding: 10px 16px;
+      background-color: #2d2d2d;
+    color: #ffdb00;
+    float: left;
+    font-weight: 500;
+    line-height: 1.42857143;
+    margin-left: -1px;
+//    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+  border: none;
+}
+.btn-group .btn.active
+{
+  color: #2d2d2d;
+  background-color: #ffdb00;
+}
