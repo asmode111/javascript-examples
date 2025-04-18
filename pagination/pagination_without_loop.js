@@ -1,5 +1,5 @@
 const paginationContainer = document.getElementById("pagination-container");
-const totalPages = 10;
+const totalPages = 1000000000;
 let currentPage = 5;
 
 function getActiveClass(page, currentPage) {
@@ -91,7 +91,7 @@ paginationContainer.addEventListener("click", (event) => {
 });
 
 if (totalPages > 0) {
-  console.time("withoutLoop");
+  console.time("bencmark");
   renderPagination();
-  console.timeEnd("withoutLoop");
+  console.timeEnd("bencmark");
 }
