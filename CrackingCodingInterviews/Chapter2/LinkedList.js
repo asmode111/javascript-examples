@@ -73,6 +73,30 @@ class LinkedList {
 
     return this.head;
   }
+
+  lastKth(k) {
+    if (k <= 0) {
+      return null;
+    }
+
+    let slow = this.head;
+    let fast = this.head;
+
+    for (let i = 0; i < k; i++) {
+      if (!fast) {
+        return null;
+      }
+
+      fast = fast.next;
+    }
+
+    while(fast) {
+      slow = slow.next;
+      fast = fast.next;
+    }
+
+    return slow;
+  }
 }
 
 module.exports = { LinkedList };

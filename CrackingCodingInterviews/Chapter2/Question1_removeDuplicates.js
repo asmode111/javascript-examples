@@ -1,3 +1,9 @@
+/**
+ * Question 1: Remove Duplicates
+ * Problem:
+ * Write code to remove duplicates from an unsorted singly linked list.
+ */
+
 const { LinkedList } = require('./LinkedList');
 
 const list = new LinkedList([3, 1, 2, 3, 1]);
