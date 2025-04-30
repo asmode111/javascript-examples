@@ -1,3 +1,10 @@
+/**
+ *  String Compression
+Compress repeated characters in a string.
+(e.g., "aabcccccaaa" → "a2b1c5a3")
+Only return the compressed string if it’s shorter.
+ */
+
 const stringCompression = (str) => {
   let charCount = 1;
   let compressedArr = [];

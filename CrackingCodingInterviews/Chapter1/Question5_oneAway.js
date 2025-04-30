@@ -1,3 +1,8 @@
+/**
+ * One Away
+Check if two strings are one (or zero) edits away (insert, remove, replace).
+ */
+
 const isOneAway = (str1, str2) => {
   str1 = str1.trim();
   str2 = str2.trim();

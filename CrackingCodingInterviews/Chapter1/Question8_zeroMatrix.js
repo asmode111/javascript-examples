@@ -1,3 +1,8 @@
+/**
+ * Zero Matrix
+If an element in a matrix is 0, set its row and column to 0.
+ */
+
 const zeroMatrix = (matrix) => {
 
   const rowSize = matrix.length;

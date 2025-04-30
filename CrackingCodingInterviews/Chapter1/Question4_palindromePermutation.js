@@ -1,3 +1,9 @@
+/**
+ * Palindrome Permutation
+Check if a string is a permutation of a palindrome.
+(e.g., "taco cat" → ✅)
+ */
+
 const charCount = (str) => {
   let obj = {};
   for (const char of str) {

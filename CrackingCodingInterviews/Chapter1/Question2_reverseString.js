@@ -1,3 +1,9 @@
+/**
+ * Check Permutation
+ * Check if one string is a permutation of another.
+ * (e.g., "abc" and "bca" → ✅)
+ */
+
 const reverseStringSolution1 = (str) => {
   const arr = str.split("");
   arr.reverse();

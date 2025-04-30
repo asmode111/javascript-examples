@@ -1,3 +1,9 @@
+/**
+ *  Rotate Matrix
+Rotate an NxN matrix 90° clockwise.
+Must be done in place.
+ */
+
 const rotateMatrix = (matrix) => {
 
   const n = matrix.length;

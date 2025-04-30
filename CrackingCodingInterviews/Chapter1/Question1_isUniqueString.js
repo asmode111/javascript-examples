@@ -1,3 +1,9 @@
+/**
+ * 1. Is Unique
+ * Check if a string has all unique characters.
+ * Bonus: What if you can’t use additional data structures?
+ */
+
 const isUniqueString = (str) => {
   const seen = {};
   for (const char of str) {
