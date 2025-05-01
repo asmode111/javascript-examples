@@ -97,6 +97,17 @@ class LinkedList {
 
     return slow;
   }
+
+  deleteMiddleNode(node) {
+    if (!node || !node.next) {
+      return false;
+    }
+
+    node.value = node.next.value;
+    node.next = node.next.next;
+
+    return true;
+  }
 }
 
 module.exports = { LinkedList };
