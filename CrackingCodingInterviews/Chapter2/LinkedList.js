@@ -108,6 +108,46 @@ class LinkedList {
 
     return true;
   }
+
+  partitionWithMerge(value) {
+    let current = this.head;
+    let smallerNodes = [];
+    let biggerNodes = [];
+    
+    while(current) {
+      if (current.value < value) {
+        smallerNodes.push(current.value);
+      } else {
+        biggerNodes.push(current.value);
+      }
+
+      current = current.next;
+    }
+
+    const mergedList = smallerNodes.concat(biggerNodes);
+    const newList = new LinkedList(mergedList);
+    this.head = newList.head;
+  }
+
+  partitionInPlace(value) {
+    let current = this.head;
+    let startIndex = null;
+
+    while(current) {
+      if (startIndex === null && current.next.value === value) {
+        startIndex = current;
+        current = current.next;
+        continue;
+      }
+
+      if (current.value < value) {
+        startIndex.next = current;
+        startIndex = current;
+      }
+      
+      current = current.next;
+    }
+  }
 }
 
 module.exports = { LinkedList };
